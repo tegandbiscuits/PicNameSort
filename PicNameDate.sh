@@ -23,7 +23,7 @@ changeFile() {
 	echo "$NEWNAME:" >> Descriptions.txt
 }
 
-BUDIR="pnd-backup-`date +"%s"`"
+BUDIR="pns-backup-`date +"%s"`"
 
 if [ -d "$1" ]; then
 	cd $1
@@ -38,11 +38,8 @@ elif [ -e "$1" ]; then
 	changeFile `basename "$1"`
 	echo "Finished changing names"
 else
-	echo "PicNameDate is a utility to change the name of pictures to help organize them"
-	echo "Usage './PicNameDate.sh [path]'"
-	echo "PicNameDate will work on single files or a directory"
-	# Will not work with slashes in path
-	# Usage PicNameDate.sh path
-	# Dropbox names have _1 for some reason
+	echo "PicNameSort is a utility to change the name of pictures to help organize them"
+	echo "Usage './PicNameSort.sh [path]'"
+	echo "PicNameSort will work on single files or a directory"
 fi
 

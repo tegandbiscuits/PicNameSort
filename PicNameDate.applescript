@@ -6,7 +6,7 @@ on selectOptions()
 	else if the button returned of the result is "Select Image" then
 		runScript((choose file with prompt "Select Image..."))
 	else if the button returned of the result is "Info" then
-		display dialog "PicNameDate changes the name of pictures to help organize them. More info and help at (url)" buttons {"Close"} default button 1
+		display dialog "PicNameSort changes the name of pictures to help organize them. More info and help at (url)" buttons {"Close"} default button 1
 		#selectOptions()
 	end if
 end selectOptions
@@ -18,7 +18,7 @@ on runScript(selectedImg)
 	try
 		do shell script Â
 			"eval `/usr/libexec/path_helper`;" & appPath Â
-			& "Contents/Resources/Scripts/PicNameDate.sh " & imgPath & " // &> /tmp/pnd-output.log"
+			& "Contents/Resources/Scripts/PicNameDate.sh " & imgPath & " // &> /tmp/pns-output.log"
 		endOptions()
 	on error the errMsg number the errNum
 		display dialog "Something went wrong: " & errNum & ", " & errMsg buttons {"OK"} default button 1
@@ -28,7 +28,7 @@ end runScript
 on endOptions()
 	display dialog "Finished running" buttons {"View log", "Do more", "Quit"} default button 3
 	if the button returned of the result is "View log" then
-		set output to do shell script "cat /tmp/pnd-output.log"
+		set output to do shell script "cat /tmp/pns-output.log"
 		display dialog "Output" default answer output buttons {"Close"} default button 1
 		endOptions()
 	else if the button returned of the result is "Do more" then
