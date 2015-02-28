@@ -20,7 +20,7 @@ changeFile() {
 	check 1
 	cp -np "$PIC" "$BUDIR/$PIC"
 	mv -nv "$PIC" "$NEWNAME"
-	echo "$NEWNAME:" >> Descriptions.txt
+	echo "$NEWNAME:" >> Picture-Descriptions.txt
 }
 
 BUDIR="pns-backup-`date +"%s"`"
