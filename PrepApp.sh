@@ -1,6 +1,6 @@
 #!/bin/bash
 
-osacompile -o PicNameDate.app PicNameDate.applescript 
+osacompile -o PicNameSort.app PicNameSort.applescript 
 
-cp PicNameDate.sh PicNameDate.app/Contents/Resources/Scripts/PicNameDate.sh
+cp PicNameDate.sh PicNameSort.app/Contents/Resources/Scripts/PicNameSort.sh
 echo "Updated PicNameSort version with app"

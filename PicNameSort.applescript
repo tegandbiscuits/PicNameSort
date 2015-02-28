@@ -18,7 +18,7 @@ on runScript(selectedImg)
 	try
 		do shell script Â
 			"eval `/usr/libexec/path_helper`;" & appPath Â
-			& "Contents/Resources/Scripts/PicNameDate.sh " & imgPath & " // &> /tmp/pns-output.log"
+			& "Contents/Resources/Scripts/PicNameSort.sh " & imgPath & " // &> /tmp/pns-output.log"
 		endOptions()
 	on error the errMsg number the errNum
 		display dialog "Something went wrong: " & errNum & ", " & errMsg buttons {"OK"} default button 1
