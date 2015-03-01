@@ -47,7 +47,7 @@ It's essentially just an interface for the command line version, but can be easi
 
 > If you downloaded just the source, then you'll need to compile the app yourself.
 > This is easily done by running `./PrepApp.sh`.
-> Developers: this needs to be done if you're working with the .app
+> Developers: this needs to be done if you're working with the .app.
 
 The app was made to be pretty self explanatory.
 To use it, launch the PicNameSort.app, then select if you want to rename a single picture or all the pictures in a folder.
