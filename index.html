@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>PicNameSort by NRauh</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>PicNameSort</h1>
+        <p>A utility to change the name of pictures to help organize them</p>
+
+        <p class="view"><a href="https://github.com/NRauh/PicNameSort">View the Project on GitHub <small>NRauh/PicNameSort</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/NRauh/PicNameSort/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/NRauh/PicNameSort/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/NRauh/PicNameSort">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="picnamesort" class="anchor" href="#picnamesort" aria-hidden="true"><span class="octicon octicon-link"></span></a>PicNameSort</h1>
+
+<p>PicNameSort is a script utility to change the file name for pictures to sort them, and help identify them.</p>
+
+<p>Say you have a folder of pictures that have names like "IMG_0281.jpg".
+It keeps them in sequential order, but it's not very descriptive.
+What PicNameSort does is grabs the date the picture was taken, then changes the file name to the date.
+The name is formatted based on ISO format, and would look like "2014-03-06_14-12-39.jpg".
+This keeps your pictures in sequential order, can help you identify the picture, and also would retain the date and time you took it should it ever change.</p>
+
+<p>If there's already a file with the same name as the picture then the name of the file will be the same, but with "_X" added to it, where X is the lowest number that makes it original (i.e. "2014-03-06_14-12-39_1.jpg")</p>
+
+<p>PicNameSort also creates a file called "Picture-Descriptions.txt", which will have the new names of your pictures in it.
+Note that if a file named Picture-Descriptions.txt already exists in the same directory, it won't be erased, but will be appended.</p>
+
+<p><strong>WARNING:</strong> Back up your pictures, and make sure they all made it!
+PicNameSort does its best not to overwrite pictures, and should just move on if there's an error making a new name or copying a file.
+It will also make a folder with copies of your pictures just in case.
+But you should still verify came out right before deleting the backups.</p>
+
+<p><strong>Note:</strong> There's a small glitch where if you use PicNameSort on a picture with the same name as it would become, then it will be changed to the "_X" format.
+This should still be safe for you pictures.</p>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h2>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p>PicNameSort is fairly simple to use.
+It depends on Bash, and ExifTool being installed.
+For the AppleScript wrapper, ExifTool needs to be installed in the default path*.</p>
+
+<p>Because it uses Bash, it'll be a bit trickier to get it to work with Windows.</p>
+
+<h3>
+<a id="command-line" class="anchor" href="#command-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>Command Line</h3>
+
+<p>Usage for the command line version looks like this:</p>
+
+<p><code>$ ./PicNameSort.sh [path]</code></p>
+
+<p>Path can be the path to a single image or a directory.
+If it's a directory then it only does images at that level.</p>
+
+<p>PicNameSort uses ExifTool to check if the file is an image, and wont attempt to convert images without a mimetype that doesn't include "image".</p>
+
+<h3>
+<a id="applescript-app" class="anchor" href="#applescript-app" aria-hidden="true"><span class="octicon octicon-link"></span></a>AppleScript App</h3>
+
+<p>The AppleScript version is a wrapper in the form of a proper application for OSX.
+It's essentially just an interface for the command line version, but can be easier to use for someone who'd rather use a GUI instead of a terminal.</p>
+
+<p>[If you downloaded it the source directory, then you'll need to compile the app yourself.
+This is easily done by running <code>./PrepApp.sh</code>. Developers: this needs to be done if you're using the .app and modify the Bash script.]</p>
+
+<p>The app should be pretty self explanatory, but to use it, launch the PicNameSort.app, then select if you want to rename a single picture or all the pictures in a folder.
+If you select a folder, then it will only format the pictures at that level.
+It won't touch any files in a subfolder.</p>
+
+<p>You wont see anything while it's working, but when it's done you'll have the option to see the output log, rename more pictures, or quit.</p>
+
+<p>The output log is what you would see if you would see if you were running this through the command line.
+If everything works right, you won't really need to bother with it.</p>
+
+<p>* Default path is <code>/usr/local/bin</code>, <code>/usr/bin</code>, <code>/bin</code>, <code>/usr/sbin/</code>, /sbin`</p>
+
+<h2>
+<a id="contributing-and-help" class="anchor" href="#contributing-and-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing and Help</h2>
+
+<p>If you have any problems then open a request on GitHub.</p>
+
+<p>If you have any code contributions then feel free to submit a pull request.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2015 Nate Rauh</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/NRauh">NRauh</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
