@@ -33,10 +33,11 @@
 
 <p>PicNameSort is a script utility to change the file name for pictures to sort them, and help identify them.</p>
 
-<p>Say you have a folder of pictures that have names like "IMG_0281.jpg".
+<p>Say you have a folder of pictures with names like "IMG_0281.jpg".
 It keeps them in sequential order, but it's not very descriptive.
-What PicNameSort does is grabs the date the picture was taken, then changes the file name to the date.
-The name is formatted based on ISO format, and would look like "2014-03-06_14-12-39.jpg".
+What PicNameSort does is grabs the date the picture was taken, then changes the file name to the date.</p>
+
+<p>The name is formatted based on ISO format, and would look like "2014-03-06_14-12-39.jpg".
 This keeps your pictures in sequential order, can help you identify the picture, and also would retain the date and time you took it should it ever change.</p>
 
 <p>If there's already a file with the same name as the picture then the name of the file will be the same, but with "_X" added to it, where X is the lowest number that makes it original (i.e. "2014-03-06_14-12-39_1.jpg")</p>
@@ -59,8 +60,9 @@ This should still be safe for you pictures.</p>
 <a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
 
 <p>PicNameSort is fairly simple to use.
-It depends on Bash, and ExifTool being installed.
-For the AppleScript wrapper, ExifTool needs to be installed in the default path*.</p>
+It depends on Bash, and <a href="http://owl.phy.queensu.ca/~phil/exiftool/">ExifTool</a> being installed.
+For the AppleScript wrapper, ExifTool needs to be installed in the default path*.
+The ExifTool installer and if it's installed through Homebrew will both be fine.</p>
 
 <p>Because it uses Bash, it'll be a bit trickier to get it to work with Windows.</p>
 
@@ -82,10 +84,14 @@ If it's a directory then it only does images at that level.</p>
 <p>The AppleScript version is a wrapper in the form of a proper application for OSX.
 It's essentially just an interface for the command line version, but can be easier to use for someone who'd rather use a GUI instead of a terminal.</p>
 
-<p>[If you downloaded it the source directory, then you'll need to compile the app yourself.
-This is easily done by running <code>./PrepApp.sh</code>. Developers: this needs to be done if you're using the .app and modify the Bash script.]</p>
+<blockquote>
+<p>If you downloaded just the source, then you'll need to compile the app yourself.
+This is easily done by running <code>./PrepApp.sh</code>.
+Developers: this needs to be done if you're using the .app and modify the Bash script.</p>
+</blockquote>
 
-<p>The app should be pretty self explanatory, but to use it, launch the PicNameSort.app, then select if you want to rename a single picture or all the pictures in a folder.
+<p>The app was made to be pretty self explanatory.
+To use it, launch the PicNameSort.app, then select if you want to rename a single picture or all the pictures in a folder.
 If you select a folder, then it will only format the pictures at that level.
 It won't touch any files in a subfolder.</p>
 
@@ -94,7 +100,8 @@ It won't touch any files in a subfolder.</p>
 <p>The output log is what you would see if you would see if you were running this through the command line.
 If everything works right, you won't really need to bother with it.</p>
 
-<p>* Default path is <code>/usr/local/bin</code>, <code>/usr/bin</code>, <code>/bin</code>, <code>/usr/sbin/</code>, /sbin`</p>
+<p>* Default path is <code>/usr/local/bin</code>, <code>/usr/bin</code>, <code>/bin</code>, <code>/usr/sbin/</code>, <code>/sbin</code>
+(To quit the app before converting, close it by right clicking the dock)</p>
 
 <h2>
 <a id="contributing-and-help" class="anchor" href="#contributing-and-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing and Help</h2>
