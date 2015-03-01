@@ -40,14 +40,14 @@ updatePNS() {
 BUDIR="pns-backup-`date +"%s"`"
 
 if [ -d "$1" ]; then
-	cd $1
+	cd "$1"
 	mkdir $BUDIR
 	find . -maxdepth 1 -type f -print0 | while read -r -d '' file; do
 		changeFile "$file"
 	done
 	echo "Finished changing names"
 elif [ -e "$1" ]; then
-	cd `dirname "$1"`
+	cd "`dirname "$1"`"
 	mkdir $BUDIR
 	changeFile `basename "$1"`
 	echo "Finished changing names"
