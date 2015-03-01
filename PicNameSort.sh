@@ -26,10 +26,11 @@ changeFile() {
 
 updatePNS() {
 	CURVER=$VERSION
-	eval `curl https://raw.githubusercontent.com/NRauh/PicNameSort/master/PicNameSort.sh | sed '2!d'`
+	eval `curl --silent https://raw.githubusercontent.com/NRauh/PicNameSort/master/PicNameSort.sh | sed '2!d'`
 	if [[ $CURVER < $VERSION ]]; then
 		echo "Updating from $CURVER to $VERSION"
-		curl https://raw.githubusercontent.com/NRauh/PicNameSort/master/PicNameSort.sh -o new.sh
+		curl --silent https://raw.githubusercontent.com/NRauh/PicNameSort/master/PicNameSort.sh -o new.sh
+		chmod 774 new.sh
 		mv new.sh PicNameSort.sh
 	elif [[ $CURVER == $VERSION ]]; then
 		echo "This version is current"
