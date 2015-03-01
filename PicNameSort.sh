@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=0.5
+VERSION=0.6
 
 changeFile() {
 	if ! exiftool "$1" -mimetype -S -s | grep -q "image"
@@ -24,6 +24,18 @@ changeFile() {
 	echo "$NEWNAME:" >> Picture-Descriptions.txt
 }
 
+updatePNS() {
+	CURVER=$VERSION
+	eval `curl https://raw.githubusercontent.com/NRauh/PicNameSort/master/PicNameSort.sh | sed '2!d'`
+	if [[ $CURVER < $VERSION ]]; then
+		echo "Updating from $CURVER to $VERSION"
+		curl https://raw.githubusercontent.com/NRauh/PicNameSort/master/PicNameSort.sh -o new.sh
+		mv new.sh PicNameSort.sh
+	elif [[ $CURVER == $VERSION ]]; then
+		echo "This version is current"
+	fi
+}
+
 BUDIR="pns-backup-`date +"%s"`"
 
 if [ -d "$1" ]; then
@@ -38,6 +50,8 @@ elif [ -e "$1" ]; then
 	mkdir $BUDIR
 	changeFile `basename "$1"`
 	echo "Finished changing names"
+elif [[ $1 == "--update" ]]; then
+	updatePNS
 else
 	echo "PicNameSort is a utility to change the name of pictures to help organize them"
 	echo "Usage './PicNameSort.sh [path]'"
