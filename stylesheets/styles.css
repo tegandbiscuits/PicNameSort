@@ -101,6 +101,10 @@ header {
   position:fixed;
 }
 
+ul ul {
+  margin-bottom: 0;
+}
+
 .download-links {
   list-style:none;
   height:40px;
