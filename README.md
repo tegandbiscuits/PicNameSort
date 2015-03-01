@@ -1,9 +1,10 @@
 #PicNameSort
 PicNameSort is a script utility to change the file name for pictures to sort them, and help identify them.
 
-Say you have a folder of pictures that have names like "IMG_0281.jpg".
+Say you have a folder of pictures with names like "IMG_0281.jpg".
 It keeps them in sequential order, but it's not very descriptive.
 What PicNameSort does is grabs the date the picture was taken, then changes the file name to the date.
+
 The name is formatted based on ISO format, and would look like "2014-03-06_14-12-39.jpg".
 This keeps your pictures in sequential order, can help you identify the picture, and also would retain the date and time you took it should it ever change.
 
@@ -24,8 +25,9 @@ This should still be safe for you pictures.
 ##How to use
 ###Dependencies
 PicNameSort is fairly simple to use.
-It depends on Bash, and ExifTool being installed.
+It depends on Bash, and <a href="http://owl.phy.queensu.ca/~phil/exiftool/">ExifTool</a> being installed.
 For the AppleScript wrapper, ExifTool needs to be installed in the default path\*.
+The ExifTool installer and if it's installed through Homebrew will both be fine.
 
 Because it uses Bash, it'll be a bit trickier to get it to work with Windows.
 
@@ -43,10 +45,12 @@ PicNameSort uses ExifTool to check if the file is an image, and wont attempt to 
 The AppleScript version is a wrapper in the form of a proper application for OSX.
 It's essentially just an interface for the command line version, but can be easier to use for someone who'd rather use a GUI instead of a terminal.
 
-[If you downloaded it the source directory, then you'll need to compile the app yourself.
-This is easily done by running `./PrepApp.sh`. Developers: this needs to be done if you're using the .app and modify the Bash script.]
+> If you downloaded just the source, then you'll need to compile the app yourself.
+> This is easily done by running `./PrepApp.sh`.
+> Developers: this needs to be done if you're using the .app and modify the Bash script.
 
-The app should be pretty self explanatory, but to use it, launch the PicNameSort.app, then select if you want to rename a single picture or all the pictures in a folder.
+The app was made to be pretty self explanatory.
+To use it, launch the PicNameSort.app, then select if you want to rename a single picture or all the pictures in a folder.
 If you select a folder, then it will only format the pictures at that level.
 It won't touch any files in a subfolder.
 
@@ -55,7 +59,8 @@ You wont see anything while it's working, but when it's done you'll have the opt
 The output log is what you would see if you would see if you were running this through the command line.
 If everything works right, you won't really need to bother with it.
 
-\* Default path is `/usr/local/bin`, `/usr/bin`, `/bin`, `/usr/sbin/`, /sbin`
+\* Default path is `/usr/local/bin`, `/usr/bin`, `/bin`, `/usr/sbin/`, `/sbin`
+(To quit the app before converting, close it by right clicking the dock)
 
 ##Contributing and Help
 If you have any problems then open a request on GitHub.
