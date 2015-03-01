@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=1.1
+VERSION=1.2
 
 changeFile() {
 	PIC="$@"
@@ -9,6 +9,10 @@ changeFile() {
 	fi
 	EXT="${PIC##*.}"
 	DATE="`exiftool "$PIC" -d "%Y-%m-%d_%H-%M-%S" -datetimeoriginal -S -s`"
+	if [[ $DATE == "" ]]; then
+		echo "WARNING: $PIC is falling back to it's modify date"
+		DATE="`exiftool "$PIC" -d "%Y-%m-%d_%H-%M-%S" -filemodifydate -S -s`"
+	fi
 	NEWNAME="${DATE}.${EXT}"
 
 	check() {
