@@ -17,6 +17,9 @@ PicNameSort does its best not to overwrite pictures, and should just move on if 
 It will also make a folder with copies of your pictures just in case.
 But you should still verify came out right before deleting the backups.
 
+**Note:** There's a small glitch where if you use PicNameSort on a picture with the same name as it would become, then it will be changed to the "_X" format.
+This should still be safe for you pictures.
+
 
 ##How to use
 ###Dependencies
