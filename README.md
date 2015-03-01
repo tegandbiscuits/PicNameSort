@@ -17,6 +17,11 @@ Note that if a file named Picture-Descriptions.txt already exists in the same di
 PicNameSort does its should not overwrite pictures, and should just move on if there's an error making a new name or copying a file.
 It will also make a folder with copies of your pictures just in case.
 But you should still verify came out right before deleting the backups.
+Also, PicNameDate doesn't know if the date on your pictures is accurate.
+
+**OTHER WARNING:** If a picture doesn't have a date/time original field, then it falls back to file modification date, which may be inaccurate.
+A warning will be put out if this happens.
+View the log to see if see if this happened with the AppleScript version.
 
 **Note:** There's a small glitch where if you use PicNameSort on a picture with the same name as it would become, then it will be changed to the "_X" format.
 This should still be safe for you pictures.
