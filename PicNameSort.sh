@@ -2,11 +2,11 @@
 VERSION=0.6
 
 changeFile() {
-	if ! exiftool "$1" -mimetype -S -s | grep -q "image"
+	PIC="$@"
+	if ! exiftool "$PIC" -mimetype -S -s | grep -q "image"
 	then
 		return
 	fi
-	PIC="$1"
 	EXT="${PIC##*.}"
 	DATE="`exiftool "$PIC" -d "%Y-%m-%d_%H-%M-%S" -datetimeoriginal -S -s`"
 	NEWNAME="${DATE}.${EXT}"
