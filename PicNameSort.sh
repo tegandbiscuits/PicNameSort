@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=1.0
+VERSION=1.1
 
 changeFile() {
 	PIC="$@"
@@ -37,6 +37,14 @@ updatePNS() {
 	fi
 }
 
+showHelp() {
+	printf "PicNameSort (v$VERSION) is a utility to change the name of pictures to help organize them\n\n"
+	printf "Usage './PicNameSort.sh [path]'\n"
+	printf "PicNameSort will work on single files or a directory\n\n"
+	printf "\t--update     -     Update PicNameSort.sh if a newer version is on GitHub\n"
+	printf "\t--help (-h)  -     Show this help screen\n"
+}
+
 BUDIR="pns-backup-`date +"%s"`"
 
 if [ -d "$1" ]; then
@@ -53,9 +61,11 @@ elif [ -e "$1" ]; then
 	echo "Finished changing names"
 elif [[ $1 == "--update" ]]; then
 	updatePNS
+elif [[ $1 == "--help" ]]; then
+	showHelp
+elif [[ $1 == "-h" ]]; then
+	showHelp
 else
-	echo "PicNameSort is a utility to change the name of pictures to help organize them"
-	echo "Usage './PicNameSort.sh [path]'"
-	echo "PicNameSort will work on single files or a directory"
+	showHelp
 fi
 
