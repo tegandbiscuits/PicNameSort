@@ -6,8 +6,10 @@ on selectOptions()
 	else if the button returned of the result is "Select Image" then
 		runScript((choose file with prompt "Select Image..."))
 	else if the button returned of the result is "Info" then
-		display dialog "PicNameSort changes the name of pictures to help organize them. More info and help at (url)" buttons {"Close"} default button 1
-		#selectOptions()
+		display dialog "PicNameSort is a utility to change the name of pictures to help organize them. More info and help at https://nrauh.github.io/PicNameSort/" buttons {"Quit", "Back"} default button 2
+		if the button returned of the result is "Back" then
+			selectOptions()
+		end if
 	end if
 end selectOptions
 
@@ -21,7 +23,11 @@ on runScript(selectedImg)
 			& "Contents/Resources/Scripts/PicNameSort.sh " & imgPath & " // &> /tmp/pns-output.log"
 		endOptions()
 	on error the errMsg number the errNum
-		display dialog "Something went wrong: " & errNum & ", " & errMsg buttons {"OK"} default button 1
+		display dialog "Something went wrong: " & errNum & ", " & errMsg buttons {"View Log", "OK"} default button 2
+		if the button returned of the result is "View Log" then
+			set output to do shell script "cat /tmp/pns-output.log"
+			display dialog "Output" default answer output buttons {"Close"} default button 1
+		end if
 	end try
 end runScript
 
