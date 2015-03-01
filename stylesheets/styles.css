@@ -215,7 +215,7 @@ footer {
     display:inline;
   }
   
-  header ul {
+  .download-links {
     position:absolute;
     right:50px;
     top:52px;
@@ -245,7 +245,7 @@ footer {
     padding:15px;
   }
   
-  header ul {
+  .download-links {
     display:none;
   }
 }
