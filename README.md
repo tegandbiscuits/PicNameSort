@@ -54,13 +54,19 @@ To use it, launch the PicNameSort.app, then select if you want to rename a singl
 If you select a folder, then it will only format the pictures at that level.
 It won't touch any files in a subfolder.
 
+The clicking the more button shows a small blurb with some more options.
+Here you can click a button to quit (there are also other ways to quit).
+You can also update the script on this window.
+A small problem with this is that it only updates the script, not the app.
+Meaning if something on the interface changes, it wont be updated through this.
+On the bright side, the interface will probably never be updated.
+
 You wont see anything while it's working, but when it's done you'll have the option to see the output log, rename more pictures, or quit.
 
 The output log is what you would see if you would see if you were running this through the command line.
 If everything works right, you won't really need to bother with it.
 
 \* Default path is `/usr/local/bin`, `/usr/bin`, `/bin`, `/usr/sbin/`, `/sbin`
-(To quit the app before converting, close it by right clicking the dock)
 
 ##Contributing and Help
 If you have any problems then open a request on GitHub.
