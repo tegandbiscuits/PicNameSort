@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=0.6
+VERSION=1.0
 
 changeFile() {
 	PIC="$@"
@@ -42,7 +42,7 @@ BUDIR="pns-backup-`date +"%s"`"
 if [ -d "$1" ]; then
 	cd "$1"
 	mkdir $BUDIR
-	find . -maxdepth 1 -type f -print0 | while read -r -d '' file; do
+	find . -maxdepth 1 -type f -not -name ".*" -print0 | while read -r -d '' file; do
 		changeFile "$file"
 	done
 	echo "Finished changing names"
