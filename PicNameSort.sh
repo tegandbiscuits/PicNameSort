@@ -1,4 +1,5 @@
 #!/bin/bash
+VERSION=0.5
 
 changeFile() {
 	if ! exiftool "$1" -mimetype -S -s | grep -q "image"
