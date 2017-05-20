@@ -1,4 +1,5 @@
-#PicNameSort
+PicNameSort
+===========
 PicNameSort is a script utility to change the file name for pictures to sort them, and help identify them.
 
 Say you have a folder of pictures with names like "IMG_0281.jpg".
@@ -27,8 +28,8 @@ View the log to see if see if this happened with the AppleScript version.
 This should still be safe for you pictures.
 
 
-##How to use
-###Dependencies
+## How to use
+### Dependencies
 PicNameSort is fairly simple to use.
 It depends on Bash, and <a href="http://owl.phy.queensu.ca/~phil/exiftool/">ExifTool</a> being installed.
 For the AppleScript wrapper, ExifTool needs to be installed in the default path\*.
@@ -36,7 +37,7 @@ The ExifTool installer and installing through Homebrew will both be fine.
 
 Because it uses Bash, it'll be a bit trickier to get it to work with Windows.
 
-###Command Line
+### Command Line
 Usage for the command line version looks like this:
 
 `$ ./PicNameSort.sh [path]`
@@ -49,7 +50,7 @@ PicNameSort uses ExifTool to check if the file is an image, and wont attempt to 
 To update use the `--update` flag instead of a path.
 This checks the current version on GitHub, and will download and replace PicNameSort.sh if it's a lower version.
 
-###AppleScript App
+### AppleScript App
 The AppleScript version is essentially just an interface for the command line version.
 It can be easier to use for someone who'd rather use a GUI instead of a terminal
 
@@ -76,13 +77,13 @@ If everything works right, you won't really need to bother with it.
 \* Default path is `/usr/local/bin`, `/usr/bin`, `/bin`, `/usr/sbin/`, `/sbin`
 
 
-##Contributing and Help
+## Contributing and Help
 If you have any problems then open a request on GitHub.
 
 If you have any code contributions then feel free to submit a pull request.
 
 
-##License
+## License
 Copyright (c) 2015 Nate Rauh
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
